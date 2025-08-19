@@ -1,0 +1,68 @@
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    transform: translateX(0);
+    top: 20px;
+    left: 20px;
+    height: calc(100vh - 40px);
+    border-radius: 1.5rem;
+    width: 5.5rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+
+  .sidebar:hover {
+    width: 300px;
+    align-items: flex-start; /* Kembalikan alignment saat hover */
+  }
+
+  /* Aturan logo untuk Desktop */
+  .sidebar-logo {
+    height: 40px; /* Tinggi default saat ciut */
+  }
+
+  /* === PERBAIKAN 2: Tinggikan container logo saat mekar === */
+  .sidebar:hover .sidebar-logo {
+    height: 50px; /* Tinggi saat mekar agar logo turun */
+  }
+
+  .logo-full {
+    opacity: 0; /* Sembunyikan logo lengkap secara default di desktop */
+  }
+
+  .logo-icon {
+    opacity: 1; /* Tampilkan ikon secara default di desktop */
+  }
+
+  .sidebar:hover .logo-full {
+    opacity: 1;
+  }
+
+  .sidebar:hover .logo-icon {
+    opacity: 0;
+  }
+
+  .sidebar:not(:hover) .nav-link {
+    justify-content: center; /* Pusatkan ikon saat sidebar ciut */
+  }
+
+  /* === PERBAIKAN 1: Sembunyikan teks dengan max-width === */
+  .sidebar:not(:hover) .nav-link span {
+    opacity: 0; /* Sembunyikan teksnya saja */
+    max-width: 0; /* Buat span tidak memakan tempat */
+  }
+
+  .main-content {
+    width: auto;
+    margin-left: calc(5.5rem + 40px);
+    transition: margin-left 300ms ease-in-out;
+  }
+
+  .container:has(.sidebar:hover) .main-content {
+    margin-left: calc(300px + 40px);
+  }
+
+  .hamburger-btn,
+  .overlay {
+    display: none;
+  }
+}
