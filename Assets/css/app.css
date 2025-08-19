@@ -5,6 +5,8 @@
 @import url("components/overlay.css");
 @import url("responsive.css");
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -13,36 +15,33 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background-color: #f3f4f6; /* bg-gray-100 */
-  overflow: hidden; /* Mencegah body utama di-scroll */
+  background-color: #f3f4f6;
+  overflow: hidden;
 }
 
-/* Container utama yang membungkus sidebar dan konten */
 .container {
   display: flex;
   height: 100vh;
 }
 
-/* ===== Bagian Konten Utama ===== */
 .main-content {
-  flex-grow: 1; /* Mengisi sisa lebar layar */
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  margin-left: 0;
   width: 100%;
 }
 
 .content-area {
   flex-grow: 1;
-  overflow-y: auto; /* Membuat konten bisa di-scroll */
-  padding: 1.5rem; /* p-6 */
+  overflow-y: auto;
+  padding: 1.5rem;
   background-image: linear-gradient(to bottom right, #ef4444, #dc2626, #b91c1c);
   color: white;
 }
 
 .content-area h2 {
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 700; /* font-bold */
-  margin-bottom: 1rem; /* mb-4 */
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }

@@ -1,17 +1,19 @@
 .sidebar {
-  width: 256px;
   background-color: white;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
+  align-items: center; /* Pusatkan item saat collapsed */
   padding: 1.5rem;
+  padding-top: 70px;
   z-index: 20;
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
+  width: 256px; /* Lebar default untuk mobile */
   transform: translateX(-100%);
-  transition: transform 300ms ease-in-out;
+  transition: transform 300ms ease-in-out, width 300ms ease-in-out;
 }
 
 .sidebar.active {
@@ -19,17 +21,38 @@
 }
 
 .sidebar-logo {
-  margin-bottom: 3rem;
+  width: 100%;
+  margin-bottom: 5rem;
   flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Diperlukan agar logo bisa tumpang tindih */
+  transition: height 300ms ease-in-out; /* Tambah transisi untuk tinggi */
 }
 
-.sidebar-logo img {
+.logo-full,
+.logo-icon {
+  position: absolute; /* Biarkan logo tumpang tindih di tempat yang sama */
+  transition: opacity 300ms ease-in-out;
+}
+
+/* Aturan untuk Mobile (Default) */
+.logo-full {
   width: 75%;
+  opacity: 1;
+}
+
+.logo-icon {
+  height: 40px;
+  opacity: 0; /* Sembunyikan logo ikon di mobile */
 }
 
 .sidebar-nav {
+  width: 100%; /* Pastikan nav memenuhi sidebar */
   flex-grow: 1;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .sidebar-nav ul {
@@ -49,6 +72,15 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   transition: all 300ms;
+  overflow: hidden;
+}
+
+.nav-link span {
+  white-space: nowrap;
+  opacity: 1;
+  /* === PERBAIKAN 1: Tambah transisi max-width === */
+  max-width: 150px; /* Beri nilai awal untuk transisi */
+  transition: opacity 0.2s ease-in-out, max-width 0.3s ease-in-out 0.1s;
 }
 
 .nav-link:hover {
