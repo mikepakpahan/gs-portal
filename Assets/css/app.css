@@ -1,0 +1,252 @@
+/* Import font dan reset dasar */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f3f4f6; /* bg-gray-100 */
+  overflow: hidden; /* Mencegah body utama di-scroll */
+}
+
+/* Container utama yang membungkus sidebar dan konten */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* ===== Bagian Sidebar ===== */
+.sidebar {
+  width: 256px; /* w-64 */
+  flex-shrink: 0;
+  background-color: white;
+  border-top-right-radius: 1rem; /* rounded-r-2xl */
+  border-bottom-right-radius: 1rem; /* rounded-r-2xl */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem; /* p-6 */
+  z-index: 20;
+
+  /* Transisi untuk animasi buka-tutup */
+  transform: translateX(-100%);
+  transition: transform 300ms ease-in-out;
+}
+
+/* State ketika sidebar aktif/terbuka */
+.sidebar.active {
+  transform: translateX(0);
+}
+
+.sidebar-logo {
+  margin-bottom: 3rem; /* mb-12 */
+  flex-shrink: 0;
+}
+
+.sidebar-logo img {
+  width: 75%;
+}
+
+.sidebar-nav {
+  flex-grow: 1; /* Membuat nav mengisi sisa ruang */
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.sidebar-nav li {
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space-x-4 */
+  color: #4b5563; /* text-gray-600 */
+  text-decoration: none;
+  padding: 0.5rem; /* p-2 */
+  border-radius: 0.5rem; /* rounded-lg */
+  transition: all 300ms;
+}
+
+.nav-link:hover {
+  color: #dc2626; /* hover:text-red-600 */
+  font-weight: 600; /* hover:font-semibold */
+  background-color: #fef2f2; /* hover:bg-red-50 */
+}
+
+.nav-link svg {
+  width: 24px; /* w-6 */
+  height: 24px; /* h-6 */
+  flex-shrink: 0;
+}
+
+/* ===== Bagian Konten Utama ===== */
+.main-content {
+  flex-grow: 1; /* Mengisi sisa lebar layar */
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-header {
+  flex-shrink: 0;
+  padding: 1rem 1.5rem; /* p-4 md:p-6 */
+  background-image: linear-gradient(to bottom right, #ef4444, #dc2626, #b91c1c); /* bg-gradient-to-br from-red-500... */
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-btn {
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 1rem; /* mr-4 */
+  cursor: pointer;
+}
+
+.hamburger-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.header-title-card {
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow */
+  width: 100%;
+  padding: 1rem 1.5rem; /* px-6 py-4 */
+}
+
+.header-title-card h1 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #1f2937; /* text-gray-800 */
+}
+
+.content-area {
+  flex-grow: 1;
+  overflow-y: auto; /* Membuat konten bisa di-scroll */
+  padding: 1.5rem; /* p-6 */
+  background-image: linear-gradient(to bottom right, #ef4444, #dc2626, #b91c1c);
+  color: white;
+}
+
+.content-area h2 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Aturan Responsif */
+@media (min-width: 768px) {
+  /* md: */
+  .sidebar {
+    transform: translateX(0);
+  }
+  .sidebar-logo img {
+    margin: 0;
+  }
+  .hamburger-btn {
+    display: none;
+  }
+}
+
+/* ===== Styling untuk Ciri Gemini ===== */
+.gemini-feature-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gemini-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.gemini-feature-card p {
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+#report-input {
+  width: 100%;
+  min-height: 150px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  color: white;
+  font-family: "Inter", sans-serif;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+#report-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#generate-summary-btn {
+  background-color: white;
+  color: #b91c1c;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+#generate-summary-btn:hover {
+  background-color: #f3f4f6;
+}
+
+#generate-summary-btn:active {
+  transform: scale(0.98);
+}
+
+#summary-output-container {
+  margin-top: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: none; /* Awalnya disembunyikan */
+}
+
+#summary-output-container h4 {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+#summary-output {
+  white-space: pre-wrap; /* Agar format teks (cth: baris baru) terjaga */
+  line-height: 1.6;
+}
+
+/* Loading Spinner */
+#loading-spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 4px solid #fff;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 1rem auto 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
