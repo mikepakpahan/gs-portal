@@ -22,17 +22,18 @@ body {
 /* ===== Bagian Sidebar ===== */
 .sidebar {
   width: 256px; /* w-64 */
-  flex-shrink: 0;
   background-color: white;
-  border-top-right-radius: 1rem; /* rounded-r-2xl */
-  border-bottom-right-radius: 1rem; /* rounded-r-2xl */
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
   display: flex;
   flex-direction: column;
   padding: 1.5rem; /* p-6 */
   z-index: 20;
 
-  /* Transisi untuk animasi buka-tutup */
+  /* === PERUBAHAN KUNCI 1: Mengubah Posisi Sidebar === */
+  position: fixed; /* Membuat sidebar melayang di atas konten */
+  left: 0;
+  top: 0;
+  height: 100%; /* Memastikan tinggi sidebar penuh */
   transform: translateX(-100%);
   transition: transform 300ms ease-in-out;
 }
@@ -53,6 +54,7 @@ body {
 
 .sidebar-nav {
   flex-grow: 1; /* Membuat nav mengisi sisa ruang */
+  overflow-y: auto; /* Agar bisa di-scroll jika menu banyak */
 }
 
 .sidebar-nav ul {
@@ -92,6 +94,9 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  /* === PERUBAHAN KUNCI 2: Memberi Ruang untuk Sidebar di Desktop === */
+  margin-left: 0;
+  width: 100%;
 }
 
 .main-header {
@@ -108,6 +113,7 @@ body {
   color: white;
   margin-right: 1rem; /* mr-4 */
   cursor: pointer;
+  z-index: 5; /* Pastikan tombol tidak tertutup sidebar */
 }
 
 .hamburger-btn svg {
@@ -143,110 +149,38 @@ body {
   margin-bottom: 1rem; /* mb-4 */
 }
 
+/* === PERUBAHAN KUNCI 3: Overlay untuk Latar Belakang === */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Aturan Responsif */
 @media (min-width: 768px) {
   /* md: */
   .sidebar {
+    position: static; /* Kembalikan posisi di desktop */
     transform: translateX(0);
+    flex-shrink: 0;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
-  .sidebar-logo img {
-    margin: 0;
+  .main-content {
+    width: auto; /* Biarkan flexbox yang mengatur lebar */
   }
   .hamburger-btn {
     display: none;
-  }
-}
-
-/* ===== Styling untuk Ciri Gemini ===== */
-.gemini-feature-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  margin-top: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.gemini-feature-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.gemini-feature-card p {
-  margin-bottom: 1rem;
-  opacity: 0.9;
-}
-
-#report-input {
-  width: 100%;
-  min-height: 150px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 0.5rem;
-  padding: 0.75rem;
-  color: white;
-  font-family: "Inter", sans-serif;
-  resize: vertical;
-  margin-bottom: 1rem;
-}
-
-#report-input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-#generate-summary-btn {
-  background-color: white;
-  color: #b91c1c;
-  font-weight: 600;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s;
-}
-
-#generate-summary-btn:hover {
-  background-color: #f3f4f6;
-}
-
-#generate-summary-btn:active {
-  transform: scale(0.98);
-}
-
-#summary-output-container {
-  margin-top: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  display: none; /* Awalnya disembunyikan */
-}
-
-#summary-output-container h4 {
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-#summary-output {
-  white-space: pre-wrap; /* Agar format teks (cth: baris baru) terjaga */
-  line-height: 1.6;
-}
-
-/* Loading Spinner */
-#loading-spinner {
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top: 4px solid #fff;
-  width: 40px;
-  height: 40px;
-  animation: spin 1s linear infinite;
-  margin: 1rem auto 0 auto;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
