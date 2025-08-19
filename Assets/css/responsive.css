@@ -1,0 +1,15 @@
+@media (min-width: 768px) {
+  .sidebar {
+    position: static;
+    transform: translateX(0);
+    flex-shrink: 0;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .main-content {
+    width: auto;
+  }
+  .hamburger-btn {
+    display: none;
+  }
+}

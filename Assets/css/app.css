@@ -1,5 +1,9 @@
 /* Import font dan reset dasar */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("partials/header.css");
+@import url("partials/sidebar.css");
+@import url("components/overlay.css");
+@import url("responsive.css");
 
 * {
   margin: 0;
@@ -19,120 +23,14 @@ body {
   height: 100vh;
 }
 
-/* ===== Bagian Sidebar ===== */
-.sidebar {
-  width: 256px; /* w-64 */
-  background-color: white;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem; /* p-6 */
-  z-index: 20;
-
-  /* === PERUBAHAN KUNCI 1: Mengubah Posisi Sidebar === */
-  position: fixed; /* Membuat sidebar melayang di atas konten */
-  left: 0;
-  top: 0;
-  height: 100%; /* Memastikan tinggi sidebar penuh */
-  transform: translateX(-100%);
-  transition: transform 300ms ease-in-out;
-}
-
-/* State ketika sidebar aktif/terbuka */
-.sidebar.active {
-  transform: translateX(0);
-}
-
-.sidebar-logo {
-  margin-bottom: 3rem; /* mb-12 */
-  flex-shrink: 0;
-}
-
-.sidebar-logo img {
-  width: 75%;
-}
-
-.sidebar-nav {
-  flex-grow: 1; /* Membuat nav mengisi sisa ruang */
-  overflow-y: auto; /* Agar bisa di-scroll jika menu banyak */
-}
-
-.sidebar-nav ul {
-  list-style: none;
-}
-
-.sidebar-nav li {
-  margin-bottom: 1.5rem; /* mb-6 */
-}
-
-.nav-link {
-  display: flex;
-  align-items: center;
-  gap: 1rem; /* space-x-4 */
-  color: #4b5563; /* text-gray-600 */
-  text-decoration: none;
-  padding: 0.5rem; /* p-2 */
-  border-radius: 0.5rem; /* rounded-lg */
-  transition: all 300ms;
-}
-
-.nav-link:hover {
-  color: #dc2626; /* hover:text-red-600 */
-  font-weight: 600; /* hover:font-semibold */
-  background-color: #fef2f2; /* hover:bg-red-50 */
-}
-
-.nav-link svg {
-  width: 24px; /* w-6 */
-  height: 24px; /* h-6 */
-  flex-shrink: 0;
-}
-
 /* ===== Bagian Konten Utama ===== */
 .main-content {
   flex-grow: 1; /* Mengisi sisa lebar layar */
   display: flex;
   flex-direction: column;
   height: 100vh;
-  /* === PERUBAHAN KUNCI 2: Memberi Ruang untuk Sidebar di Desktop === */
   margin-left: 0;
   width: 100%;
-}
-
-.main-header {
-  flex-shrink: 0;
-  padding: 1rem 1.5rem; /* p-4 md:p-6 */
-  background-image: linear-gradient(to bottom right, #ef4444, #dc2626, #b91c1c); /* bg-gradient-to-br from-red-500... */
-  display: flex;
-  align-items: center;
-}
-
-.hamburger-btn {
-  background: none;
-  border: none;
-  color: white;
-  margin-right: 1rem; /* mr-4 */
-  cursor: pointer;
-  z-index: 5; /* Pastikan tombol tidak tertutup sidebar */
-}
-
-.hamburger-btn svg {
-  width: 24px;
-  height: 24px;
-}
-
-.header-title-card {
-  background-color: white;
-  border-radius: 0.5rem; /* rounded-lg */
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow */
-  width: 100%;
-  padding: 1rem 1.5rem; /* px-6 py-4 */
-}
-
-.header-title-card h1 {
-  font-size: 1.25rem; /* text-xl */
-  font-weight: 600; /* font-semibold */
-  color: #1f2937; /* text-gray-800 */
 }
 
 .content-area {
@@ -147,40 +45,4 @@ body {
   font-size: 1.5rem; /* text-2xl */
   font-weight: 700; /* font-bold */
   margin-bottom: 1rem; /* mb-4 */
-}
-
-/* === PERUBAHAN KUNCI 3: Overlay untuk Latar Belakang === */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 300ms ease-in-out, visibility 300ms ease-in-out;
-}
-.overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Aturan Responsif */
-@media (min-width: 768px) {
-  /* md: */
-  .sidebar {
-    position: static; /* Kembalikan posisi di desktop */
-    transform: translateX(0);
-    flex-shrink: 0;
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-  }
-  .main-content {
-    width: auto; /* Biarkan flexbox yang mengatur lebar */
-  }
-  .hamburger-btn {
-    display: none;
-  }
 }
