@@ -20,7 +20,7 @@
     height: 40px; /* Tinggi default saat ciut */
   }
 
-  /* === PERBAIKAN 2: Tinggikan container logo saat mekar === */
+  /* === PERBAIKAN 2: Tinggikan contain logo saat mekar === */
   .sidebar:hover .sidebar-logo {
     height: 50px; /* Tinggi saat mekar agar logo turun */
   }
@@ -52,12 +52,12 @@
   }
 
   .main-content {
-    width: auto;
+    width: 100%;
     margin-left: calc(5.5rem + 40px);
     transition: margin-left 300ms ease-in-out;
   }
 
-  .container:has(.sidebar:hover) .main-content {
+  .contain:has(.sidebar:hover) .main-content {
     margin-left: calc(300px + 40px);
   }
 
