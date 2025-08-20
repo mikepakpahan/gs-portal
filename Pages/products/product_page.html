@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GS Portal</title>
+    <title>Product Telkom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/Assets/css/app.css" />
   </head>
   <body>
@@ -13,9 +14,68 @@
       <div class="main-content">
         <div id="header"></div>
         <main class="content-area">
-          <div>
-            <h2>Selamat Datang di Dashboard!</h2>
-            <p>Ini adalah area konten utama. Kamu bisa menambahkan berbagai macam komponen di sini, seperti kartu, tabel, atau grafik. Desain ini sudah responsif lho!</p>
+          <div class="bg-white grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 border-radius-3xl p-8 rounded-3xl shadow-lg">
+            <!-- Kartu Produk Indibiz -->
+            <div class="bg-white p-6 rounded-3xl shadow-md border-2 border-red-500 flex items-start">
+              <!-- Bagian kiri: logo/gambar produk -->
+              <div class="flex items-center justify-center w-32 h-32 flex-shrink-0 mr-6 mt-2">
+                <img src="/Assets/images/product/indibiz.png" alt="Indibiz Logo" class="w-full h-full object-contain p-2" />
+              </div>
+              <!-- Bagian kanan: judul dan deskripsi produk -->
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">IndiBiz</h3>
+                <p class="text-gray-700 text-sm">
+                  IndiBiz adalah layanan digital milik Telkom Indonesia yang dikhususkan untuk segmen bisnis, mulai dari UMKM, kantor, hingga perusahaan besar (enterprise). Layanan ini mencakup internet dedicated dengan kecepatan stabil,
+                  solusi komunikasi bisnis seperti Cloud PBX, layanan konferensi video, hingga solusi digital seperti aplikasi kasir online, pembuatan website bisnis, dan sistem manajemen pelanggan. IndiBiz hadir sebagai bentuk dukungan
+                  Telkom bagi dunia usaha agar lebih produktif dan terhubung dengan pelanggan di era digital.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kartu Produk NeuCentriX -->
+            <div class="bg-white p-6 rounded-3xl shadow-md border-2 border-red-500 flex items-start">
+              <div class="flex items-center justify-center w-32 h-32 flex-shrink-0 mr-6 mt-2">
+                <img src="/Assets/images/product/neuCentrIX.png" alt="NeuCentriX Logo" class="w-full h-full object-contain p-2" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">NeuCentriX</h3>
+                <p class="text-gray-700 text-sm">
+                  Neucentrix adalah merek layanan data center dan cloud computing milik Telkom Indonesia. Layanan ini menyediakan fasilitas collocation server, penyimpanan data, layanan cloud (IaaS, PaaS, SaaS), hingga disaster recovery.
+                  Dengan Neucentrix, perusahaan dapat mengelola data secara lebih aman, efisien, dan fleksibel tanpa harus membangun infrastruktur IT sendiri. Layanan ini juga memenuhi standar internasional dalam hal keamanan dan
+                  ketersediaan data.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kartu Produk AstiNET -->
+            <div class="bg-white p-6 rounded-3xl shadow-md border-2 border-red-500 flex items-start">
+              <div class="flex items-center justify-center w-32 h-32 flex-shrink-0 mr-6 mt-2">
+                <img src="/Assets/images/product/ASTINet.png" alt="AstiNET Logo" class="w-full h-full object-contain p-2" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">AstiNET</h3>
+                <p class="text-gray-700 text-sm">
+                  Astinet adalah layanan internet dedicated dari Telkom yang dirancang khusus untuk kebutuhan perusahaan atau instansi yang membutuhkan koneksi stabil, cepat, dan aman. Berbeda dengan internet reguler, Astinet memiliki
+                  kapasitas yang bisa disesuaikan dengan kebutuhan bisnis serta SLA (Service Level Agreement) yang tinggi, sehingga menjamin kualitas layanan. Produk ini banyak digunakan oleh bank, pemerintahan, rumah sakit, perusahaan
+                  logistik, dan sektor bisnis lainnya.
+                </p>
+              </div>
+            </div>
+
+            <!-- Kartu Produk Wifi.id -->
+            <div class="bg-white p-6 rounded-3xl shadow-md border-2 border-red-500 flex items-start">
+              <div class="flex items-center justify-center w-32 h-32 flex-shrink-0 mr-6 mt-2">
+                <img src="/Assets/images/product/wifi.id.png" alt="Wifi.id Logo" class="w-full h-full object-contain p-2" />
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2">Wifi.id</h3>
+                <p class="text-gray-700 text-sm">
+                  Wifi.id merupakan layanan internet publik berbasis hotspot yang disediakan oleh Telkom Indonesia di berbagai lokasi strategis, seperti sekolah, kampus, bandara, stasiun, kantor pemerintahan, hingga ruang publik lainnya.
+                  Dengan menggunakan voucher atau paket akses, masyarakat bisa menikmati internet dengan kecepatan tinggi tanpa harus memiliki langganan di rumah. Wifi.id menjadi salah satu cara Telkom untuk mendukung inklusi digital dan
+                  memperluas akses internet di Indonesia.
+                </p>
+              </div>
+            </div>
           </div>
         </main>
       </div>
