@@ -1,13 +1,40 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Welcome to the Home Page</h1>
-    <p>This is the main content of the home page.</p>
-    <a href="about_page.html">Go to About Page</a>  
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebar Keren ala Telkom (Final Touches)</title>
+    <link rel="stylesheet" href="/Assets/css/app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="sidebar"></div>
+
+      <div class="main-content">
+        <div id="header"></div>
+        <main class="content-area">
+          <div>
+            <h2>Selamat Datang di Dashboard!</h2>
+            <p>Ini adalah area konten utama. Kamu bisa menambahkan berbagai macam komponen di sini, seperti kartu, tabel, atau grafik. Desain ini sudah responsif lho!</p>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <script>
+      fetch("Partials/sidebar.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("sidebar").innerHTML = data;
+        });
+      fetch("Partials/header.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+    </script>
+    <script src="/Assets/js/app.js"></script>
+  </body>
 </html>
