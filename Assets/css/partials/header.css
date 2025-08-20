@@ -1,7 +1,6 @@
 .main-header {
   flex-shrink: 0;
   padding: 1rem 1.5rem;
-  background-image: linear-gradient(to bottom right, #ef4444, #dc2626, #b91c1c);
   display: flex;
   align-items: center;
 }
