@@ -6,97 +6,6 @@
     <title>Daftar Pekerja</title>
     <link rel="stylesheet" href="/Assets/css/app.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
-    <style>
-      .employee-list-container {
-        width: 100%;
-        max-width: 900px;
-        margin: auto;
-        background-color: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        padding: 20px;
-        margin-top: 20px; /* Tambahan margin atas agar tidak menempel */
-      }
-
-      .content-area {
-        padding: 20px;
-        background-color: white;
-      }
-      .header-employee h2 {
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-        color: #646464;
-        font-size: 35px;
-      }
-      .header-employee {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        margin-bottom: 20px;
-        color: #646464;
-      }
-
-      .employee-card {
-        display: flex;
-        align-items: center;
-        background-color: #fff;
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        padding: 15px;
-        margin-bottom: 15px;
-        transition: all 0.3s ease;
-      }
-
-      .employee-card:hover {
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        transform: translateY(-2px);
-      }
-
-      .employee-card img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 15px;
-      }
-
-      .employee-info {
-        display: flex;
-        align-items: center;
-        width: 100%;
-      }
-
-      .employee-info > div {
-        flex: 1;
-      }
-
-      .employee-info .name {
-        font-size: 16px;
-        font-weight: 500;
-        color: #333;
-      }
-
-      .employee-info .id,
-      .employee-info .role {
-        font-size: 14px;
-        color: #666;
-        margin-left: 15px;
-      }
-
-      .divider {
-        height: 30px;
-        width: 1px;
-        background-color: #e0e0e0;
-        margin: 0 20px;
-      }
-
-      .employee-info .role {
-        text-align: right;
-        font-weight: 500;
-        color: #555;
-      }
-    </style>
   </head>
   <body>
     <div class="contain">
@@ -108,65 +17,69 @@
             <h2>Employee</h2>
             <p>10 people on the list</p>
           </div>
-          <div class="employee-list-container">
-            <div class="employee-card">
-              <img src="https://via.placeholder.com/50" alt="Zico S." />
-              <div class="employee-info">
-                <div class="name">Zico S.</div>
-                <div class="divider"></div>
-                <div class="id">910173</div>
-                <div class="divider"></div>
-                <div class="role">Account Manager</div>
+          <div class="employee-list">
+            <div class="employee-manager-card">
+              <div class="manager">
+                <div class="manager-profile">
+                  <img src="/Assets/images/employee/Asep.png" alt="Asep Abdul Kodir Djaelani" />
+                </div>
+                <div class="manager-bg"></div>
+                <div class="manager-info">
+                  <div class="manager-name">Asep Abdul Kodir Djaelani</div>
+                  <div class="manager-nik">403626</div>
+                  <div class="manager-role">Account Manager</div>
+                </div>
               </div>
             </div>
-            <div class="employee-card">
-              <img src="https://via.placeholder.com/50" alt="Ivan S. S." />
-              <div class="employee-info">
-                <div class="name">Ivan S. S.</div>
-                <div class="divider"></div>
-                <div class="id">866152</div>
-                <div class="divider"></div>
-                <div class="role">Account Manager 2</div>
+
+            <div class="employee-list-container">
+              <div class="employee-card">
+                <img src="/Assets/images/employee/Zico.png" alt="Zico S." />
+                <div class="employee-info">
+                  <div class="name">Zico S.</div>
+                  <div class="nik">910173</div>
+                  <div class="role">Account Manager</div>
+                </div>
               </div>
-            </div>
-            <div class="employee-card">
-              <img src="https://via.placeholder.com/50" alt="Ery C. S" />
-              <div class="employee-info">
-                <div class="name">Ery C. S</div>
-                <div class="divider"></div>
-                <div class="id">404413</div>
-                <div class="divider"></div>
-                <div class="role">Account Manager Experience</div>
+              <div class="employee-card">
+                <img src="/Assets/images/employee/Ivan.png" alt="Ivan S. S." />
+                <div class="employee-info">
+                  <div class="name">Ivan S. S.</div>
+                  <div class="nik">866152</div>
+                  <div class="role">Account Manager 2</div>
+                </div>
               </div>
-            </div>
-            <div class="employee-card">
-              <img src="https://via.placeholder.com/50" alt="Frengky H." />
-              <div class="employee-info">
-                <div class="name">Frengky H.</div>
-                <div class="divider"></div>
-                <div class="id">403079</div>
-                <div class="divider"></div>
-                <div class="role">Account Manager Experience</div>
+              <div class="employee-card">
+                <img src="/Assets/images/employee/Ery.png" alt="Ery C. S" />
+                <div class="employee-info">
+                  <div class="name">Ery C. S</div>
+                  <div class="nik">404413</div>
+                  <div class="role">Account Manager Experience</div>
+                </div>
               </div>
-            </div>
-            <div class="employee-card">
-              <img src="https://via.placeholder.com/50" alt="Dicky T." />
-              <div class="employee-info">
-                <div class="name">Dicky T.</div>
-                <div class="divider"></div>
-                <div class="id">950413</div>
-                <div class="divider"></div>
-                <div class="role">Account Manager 1</div>
+              <div class="employee-card">
+                <img src="/Assets/images/employee/Frengky.png" alt="Frengky H." />
+                <div class="employee-info">
+                  <div class="name">Frengky H.</div>
+                  <div class="nik">403079</div>
+                  <div class="role">Account Manager Experience</div>
+                </div>
               </div>
-            </div>
-            <div class="employee-card">
-              <img src="https://via.placeholder.com/50" alt="Anggi R." />
-              <div class="employee-info">
-                <div class="name">Anggi R.</div>
-                <div class="divider"></div>
-                <div class="id">403627</div>
-                <div class="divider"></div>
-                <div class="role">Account Manager Experience</div>
+              <div class="employee-card">
+                <img src="/Assets/images/employee/Dicky.png" alt="Dicky T." />
+                <div class="employee-info">
+                  <div class="name">Dicky T.</div>
+                  <div class="nik">950413</div>
+                  <div class="role">Account Manager 1</div>
+                </div>
+              </div>
+              <div class="employee-card">
+                <img src="/Assets/images/employee/" alt="Anggi R." />
+                <div class="employee-info">
+                  <div class="name">Anggi R.</div>
+                  <div class="nik">403627</div>
+                  <div class="role">Account Manager Experience</div>
+                </div>
               </div>
             </div>
           </div>
