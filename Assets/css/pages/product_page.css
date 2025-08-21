@@ -24,10 +24,10 @@
   transition: all 0.3s ease;
 }
 
-.employee-manager-card:hover {
+/* .employee-manager-card:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
-}
+} */
 
 .manager {
   width: 100%;
@@ -35,15 +35,16 @@
   flex-direction: column;
 }
 .manager-profile {
-  width: 100%;
-  border-radius: 12px;
+  position: absolute;
+  width: auto;
+  height: auto;
+  border-radius: 100px;
   overflow: hidden;
+  background-image: linear-gradient(to bottom, #c09898, #5a4747);
 }
 
 .manager-profile img {
-  width: 300px;
-  position: absolute;
-  top: 20px;
+  width: 200px;
   z-index: 100;
 }
 
