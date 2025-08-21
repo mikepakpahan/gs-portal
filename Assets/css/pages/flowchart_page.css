@@ -1,0 +1,41 @@
+/* Gaya kustom untuk memastikan gambar skala responsif */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Gaya kustom untuk container flowchart */
+.flowchart-container {
+  min-height: 400px; /* Tinggi minimum untuk melihat area konten */
+  background-color: #f9fafb; /* Warna latar belakang ringan untuk area flowchart */
+  border: 1px dashed #d1d5db; /* Border putus-putus untuk menunjukkan area konten */
+  display: flex;
+  flex-direction: column; /* Ubah flex-direction ke column agar item di dalamnya tumpuk vertikal */
+  align-items: flex-start; /* Mengatur item di dalam container agar rata kiri (untuk judul) */
+  justify-content: flex-start; /* Atur konten agar rata atas */
+  font-size: 1.25rem;
+  color: #757575;
+  padding-top: 1rem; /* Add some top padding */
+  padding-bottom: 1rem; /* Add some bottom padding */
+}
+
+.flowchart-image-wrapper {
+  display: flex; /* Mengubah kembali dari block menjadi flex */
+  justify-content: center; /* Mengatur konten (gambar) di dalam wrapper agar rata tengah */
+  width: 100%; /* Pastikan wrapper mengambil lebar penuh */
+  background-color: #f7f7f7; /* Warna latar belakang untuk wrapper gambar */
+  padding: 1rem; /* Menambahkan sedikit padding agar gambar tidak terlalu mepet background */
+  box-sizing: border-box; /* Memastikan padding tidak menambah lebar keseluruhan */
+  margin-left: 0; /* Pastikan tidak ada margin auto yang mengganggu */
+  margin-right: 0; /* Pastikan tidak ada margin auto yang mengganggu */
+
+  /* PERBAIKAN: Mengoverride alignment dari parent (flowchart-container) */
+  align-self: center; /* Ini akan meratakan wrapper gambar itu sendiri ke tengah */
+}
+
+/* Menghapus media query yang tidak lagi diperlukan */
+/* @media (max-width: 767px) {
+  .flowchart-image-wrapper {
+    justify-content: center;
+  }
+} */
