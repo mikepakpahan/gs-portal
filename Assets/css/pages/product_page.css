@@ -6,14 +6,15 @@
   flex-direction: row;
   border-radius: 12px;
   padding: 20px;
-  margin-top: 20px; /* Tambahan margin atas agar tidak menempel */
+  margin-top: 20px;
+  margin-left: 50px;
 }
 
 .employee-manager-card {
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 400px;
+  height: 450px;
   align-items: center;
   background-color: #fff;
   border: 1px solid #e0e0e0;
@@ -24,11 +25,6 @@
   transition: all 0.3s ease;
 }
 
-/* .employee-manager-card:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
-} */
-
 .manager {
   width: 100%;
   display: flex;
@@ -36,17 +32,20 @@
 }
 .manager-profile {
   position: absolute;
-  bottom: 500px;
+  left: 310px;
+  top: 300px;
   width: auto;
   height: auto;
   border-radius: 500px;
   overflow: hidden;
-  background-image: linear-gradient(to bottom, #c09898, #5a4747);
 }
 
 .manager-profile img {
-  width: 100px;
-  z-index: 100;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: linear-gradient(to bottom, #c09898, #5a4747);
 }
 
 .manager-bg {
@@ -61,6 +60,45 @@
 .manager-bg img {
   width: auto;
   height: 200px;
+}
+.manager-info {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+
+.manager-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: start;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.manager-details h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: black;
+}
+
+.manager-details p {
+  font-size: 16px;
+  color: black;
+}
+
+.manager-role {
+  width: fit-content;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: black;
+  padding: 20px;
+  background-color: #e2e2e2;
+  border-radius: 14px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .employee-list-container {
   width: 100%;
@@ -87,8 +125,10 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 25px;
+  margin-left: 70px;
+  gap: 10px;
   color: #646464;
 }
 
@@ -117,7 +157,6 @@
   margin-right: 15px;
   background: linear-gradient(to bottom, #c09898, #5a4747);
 }
-
 .employee-info {
   display: flex;
   align-items: center;
@@ -146,4 +185,40 @@
   border-left: #333 solid 1px;
   border-right: #333 solid 1px;
   text-align: center;
+}
+
+@media (max-width: 1440px) {
+  .employee-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .manager-detail {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .employee-manager-card {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .manager-bg img {
+    height: 150px;
+  }
+
+  .manager-profile {
+    position: absolute;
+    left: 650px;
+    top: 300px;
+    width: auto;
+    height: auto;
+    border-radius: 500px;
+    overflow: hidden;
+  }
+  .manager-profile img {
+    width: auto;
+    height: auto;
+    border-radius: 500px;
+    z-index: 100;
+  }
 }
