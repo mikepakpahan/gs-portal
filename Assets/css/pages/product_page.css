@@ -36,20 +36,30 @@
 }
 .manager-profile {
   position: absolute;
+  bottom: 500px;
   width: auto;
   height: auto;
-  border-radius: 100px;
+  border-radius: 500px;
   overflow: hidden;
   background-image: linear-gradient(to bottom, #c09898, #5a4747);
 }
 
 .manager-profile img {
-  width: 200px;
+  width: 100px;
   z-index: 100;
 }
 
-.manager-bg img {
+.manager-bg {
+  background-image: url("/Assets/images/employee/Manager-bg.png");
+  background-position: center;
+  background-size: cover;
+  height: 200px;
   width: 100%;
+  border-radius: 12px;
+}
+
+.manager-bg img {
+  width: auto;
   height: 200px;
 }
 .employee-list-container {
