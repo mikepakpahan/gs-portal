@@ -1,0 +1,4 @@
+{
+  "liveServer.settings.injectBody": false,
+  "liveServer.settings.ignoreFiles": ["**/Layout/Partials/**"]
+}
