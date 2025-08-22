@@ -1,13 +1,33 @@
+.contain {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+  display: flex; /* Gunakan flexbox pada main-content */
+  flex-direction: column; /* Atur orientasi vertikal */
+}
+
 .employee-list {
   width: 100%;
   gap: 20px;
-  margin: auto;
   display: flex;
   flex-direction: row;
   border-radius: 12px;
   padding: 20px;
-  margin-top: 20px;
-  margin-left: 50px;
+  margin-left: 30px;
+  flex-grow: 1; /* Biarkan employee-list mengisi ruang yang tersisa */
+}
+.employee-list-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff00;
+  border-radius: 12px;
+  padding: 20px;  max-height: calc(100vh - 200px); /* Ganti 200px sesuai kebutuhan Anda */
+  overflow-y: auto; /* Aktifkan scrolling vertikal */
 }
 
 .employee-manager-card {
@@ -23,36 +43,49 @@
   padding: 15px;
   margin-top: 20px;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .manager {
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative; /* Tambahkan ini agar profile bisa jadi relative */
+  background-size: cover;
 }
 .manager-profile {
   position: absolute;
-  left: 310px;
-  top: 300px;
-  width: auto;
-  height: auto;
-  border-radius: 500px;
+  top: 75px; /* Posisi vertikal di dalam card */
+  left: 18%;
+  transform: translateX(-50%); /* Memastikan posisi benar-benar di tengah */
   overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, top 0.5s ease-in-out, left 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 .manager-profile img {
-  width: 180px;
-  height: 180px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
+  display: block;
   background: linear-gradient(to bottom, #c09898, #5a4747);
 }
+.contain.sidebar-open .manager-profile {
+  top: 75px;
+  left: 25%;
+}
 
+.contain.sidebar-open .manager-profile img {
+  width: 130px !important;
+  height: 130px !important;
+}
 .manager-bg {
   background-image: url("/Assets/images/employee/Manager-bg.png");
   background-position: center;
   background-size: cover;
-  height: 200px;
+  height: 150px;
   width: 100%;
   border-radius: 12px;
 }
@@ -65,6 +98,7 @@
   display: flex;
   flex-direction: column;
   height: 200px;
+  margin-top: 50px;
 }
 
 .manager-details {
@@ -90,8 +124,8 @@
 .manager-role {
   width: fit-content;
   align-items: center;
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 15px;
+  font-weight: 900;
   color: black;
   padding: 20px;
   background-color: #e2e2e2;
@@ -126,8 +160,7 @@
   flex-direction: column;
   align-items: start;
   margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 70px;
+  margin-left: 50px;
   gap: 10px;
   color: #646464;
 }
@@ -187,7 +220,7 @@
   text-align: center;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 768px) {
   .employee-list {
     flex-direction: column;
     align-items: center;
@@ -207,17 +240,14 @@
   }
 
   .manager-profile {
-    position: absolute;
-    left: 650px;
-    top: 300px;
-    width: auto;
-    height: auto;
-    border-radius: 500px;
-    overflow: hidden;
+    width: 140px;
+    height: 140px;
+    top: 120px;
   }
+
   .manager-profile img {
-    width: auto;
-    height: auto;
+    width: 140px;
+    height: 140px;
     border-radius: 500px;
     z-index: 100;
   }
