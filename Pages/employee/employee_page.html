@@ -27,7 +27,7 @@
                 <div class="manager-info">
                   <div class="manager-details">
                     <h2>Asep Abdul Kodir Djaelani</h2>
-                    <p>403626</p>
+                    <p>810034</p>
                   </div>
                   <div class="manager-role">Manager Government Service</div>
                 </div>
@@ -38,15 +38,23 @@
               <div class="employee-card">
                 <img src="/Assets/images/employee/Zico.png" alt="Zico S." />
                 <div class="employee-info">
-                  <div class="name">Zico S.</div>
+                  <div class="name">Zico Venancio Sinaga</div>
                   <div class="nik">910173</div>
+                  <div class="role">Account Manager</div>
+                </div>
+              </div>
+              <div class="employee-card">
+                <img src="/Assets/images/employee/Marlincha.png" alt="Marlincha Simamora" />
+                <div class="employee-info">
+                  <div class="name">Marlincha Simamora</div>
+                  <div class="nik">956134</div>
                   <div class="role">Account Manager</div>
                 </div>
               </div>
               <div class="employee-card">
                 <img src="/Assets/images/employee/Ivan.png" alt="Ivan S. S." />
                 <div class="employee-info">
-                  <div class="name">Ivan S. S.</div>
+                  <div class="name">Ivan Sandy Nainggolan</div>
                   <div class="nik">866152</div>
                   <div class="role">Account Manager 2</div>
                 </div>
@@ -54,7 +62,7 @@
               <div class="employee-card">
                 <img src="/Assets/images/employee/Ery.png" alt="Ery C. S" />
                 <div class="employee-info">
-                  <div class="name">Ery C. S</div>
+                  <div class="name">Ery Chandra Sinaga</div>
                   <div class="nik">404413</div>
                   <div class="role">Account Manager Experience</div>
                 </div>
@@ -62,7 +70,7 @@
               <div class="employee-card">
                 <img src="/Assets/images/employee/Frengky.png" alt="Frengky H." />
                 <div class="employee-info">
-                  <div class="name">Frengky H.</div>
+                  <div class="name">Frengky Fernando Hutajulu</div>
                   <div class="nik">403079</div>
                   <div class="role">Account Manager Experience</div>
                 </div>
@@ -70,17 +78,33 @@
               <div class="employee-card">
                 <img src="/Assets/images/employee/Dicky.png" alt="Dicky T." />
                 <div class="employee-info">
-                  <div class="name">Dicky T.</div>
+                  <div class="name">Dicky Christian Tamba</div>
                   <div class="nik">950413</div>
                   <div class="role">Account Manager 1</div>
                 </div>
               </div>
               <div class="employee-card">
-                <img src="/Assets/images/employee/" alt="Anggi R." />
+                <img src="/Assets/images/employee/Veberia.png" alt="Veberia Panjaitan" />
                 <div class="employee-info">
-                  <div class="name">Anggi R.</div>
-                  <div class="nik">403627</div>
-                  <div class="role">Account Manager Experience</div>
+                  <div class="name">Veberia Panjaitan</div>
+                  <div class="nik">980006</div>
+                  <div class="role">Officer 2 Sales & Team Support</div>
+                </div>
+              </div>
+              <div class="employee-card">
+                <img src="/Assets/images/employee/Vebrina.png" alt="Vebrina Marty" />
+                <div class="employee-info">
+                  <div class="name">Vebrina Marty</div>
+                  <div class="nik">44197</div>
+                  <div class="role">Inputer GS</div>
+                </div>
+              </div>
+              <div class="employee-card">
+                <img src="/Assets/images/employee/Lailany.png" alt="Lailani Soraya" />
+                <div class="employee-info">
+                  <div class="name">Lailani Soraya</div>
+                  <div class="nik">30171</div>
+                  <div class="role">Inputter GS</div>
                 </div>
               </div>
             </div>
@@ -91,5 +115,20 @@
     <div class="overlay" id="overlay"></div>
     <script src="/Assets/js/app.js"></script>
     <script src="/Assets/js/import-partials.js"></script>
+    <script>
+      // Asumsikan sidebar adalah elemen yang akan memicu event
+      const sidebar = document.getElementById("sidebar");
+      const container = document.querySelector(".contain");
+
+      // Saat kursor masuk ke area sidebar, tambahkan class
+      sidebar.addEventListener("mouseenter", () => {
+        container.classList.add("sidebar-open");
+      });
+
+      // Saat kursor keluar dari area sidebar, hapus class
+      sidebar.addEventListener("mouseleave", () => {
+        container.classList.remove("sidebar-open");
+      });
+    </script>
   </body>
 </html>
