@@ -26,7 +26,8 @@
   max-width: 900px;
   background-color: #ffffff00;
   border-radius: 12px;
-  padding: 20px;  max-height: calc(100vh - 200px); /* Ganti 200px sesuai kebutuhan Anda */
+  padding: 20px;
+  max-height: calc(100vh - 200px); /* Ganti 200px sesuai kebutuhan Anda */
   overflow-y: auto; /* Aktifkan scrolling vertikal */
 }
 
@@ -147,7 +148,16 @@
   background-color: white;
 }
 
-.header-employee h2 {
+.header-employee {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 30px 0 30px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  justify-content: space-between;
+}
+
+.header-title h2 {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -155,12 +165,11 @@
   font-size: 35px;
 }
 
-.header-employee {
+.header-title p {
   display: flex;
   flex-direction: column;
   align-items: start;
   margin-top: 20px;
-  margin-left: 50px;
   gap: 10px;
   color: #646464;
 }
@@ -218,6 +227,56 @@
   border-left: #333 solid 1px;
   border-right: #333 solid 1px;
   text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-item {
+  margin-right: 25px;
+}
+
+.navbar-item a {
+  position: relative;
+  text-decoration: none;
+  color: #c09898;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-item a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007bff;
+  transition: width 0.3s ease;
+}
+
+/* Aturan untuk efek hover */
+.navbar-item a:hover {
+  color: #007bff;
+}
+
+.navbar-item a:hover::after {
+  width: 100%;
+}
+
+/* Aturan untuk halaman yang aktif */
+.navbar-item a.active {
+  color: #007bff;
+}
+
+.navbar-item a.active::after {
+  width: 100%;
 }
 
 @media (max-width: 768px) {
