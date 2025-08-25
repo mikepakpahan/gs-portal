@@ -49,8 +49,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   // Muat konten flowchart untuk bagian Modif dan Do
-  // Path file telah diperbarui agar sesuai dengan /Pages/flowchart/
-  // Konten Input tidak lagi di-load karena sudah di-embed langsung di HTML utama
   await loadAndInsertHtml("flowchart-modif-section", "/Pages/flowchart/flowchart_modif.html");
   await loadAndInsertHtml("flowchart-do-section", "/Pages/flowchart/flowchart_do.html");
 
@@ -58,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const navbar = document.getElementById("flowchart-navbar");
   const tabLinks = navbar ? navbar.querySelectorAll("a") : [];
   const contentSections = document.querySelectorAll(".flowchart-content-section");
-  const mainTitleElement = document.getElementById("flowchart-main-title"); // Dapatkan elemen judul utama
+  const mainTitleElement = document.getElementById("flowchart-main-title");
 
   // Fungsi untuk mengaktifkan tab dan menampilkan konten yang sesuai
   function activateTab(targetId) {
@@ -76,7 +74,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     const activeLink = document.querySelector(`[data-target="${targetId}"]`);
     if (activeLink) {
       activeLink.classList.add("active-tab");
-      // Update judul utama berdasarkan data-title dari link aktif
       const newTitle = activeLink.getAttribute("data-title");
       if (mainTitleElement && newTitle) {
         mainTitleElement.textContent = newTitle;
@@ -87,13 +84,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
       targetSection.style.display = "block";
+
+      // Scroll otomatis ke atas setelah render
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }, 50);
     }
   }
 
   // Tambahkan event listener untuk setiap link tab
   tabLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
-      event.preventDefault(); // Mencegah browser melompat ke bagian atas halaman
+      event.preventDefault();
       const targetId = link.getAttribute("data-target");
       if (targetId) {
         activateTab(targetId);
@@ -102,11 +104,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   });
 
   // Aktifkan tab pertama (Input) secara default saat halaman dimuat
-  // Karena Input sudah di-embed dan aktif by default di HTML,
-  // kita cukup pastikan logika tab menyesuaikan diri.
-  // Jika tabLinks[0] adalah 'Input', maka ini akan memastikan kelasnya benar.
   if (tabLinks.length > 0) {
     const defaultTarget = tabLinks[0].getAttribute("data-target");
-    activateTab(defaultTarget); // Ini akan mengaktifkan 'Input' dan memastikan kelas aktifnya benar
+    activateTab(defaultTarget);
   }
 });
