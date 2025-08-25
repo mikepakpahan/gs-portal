@@ -8,29 +8,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/Assets/css/app.css" />
     <!-- Menambahkan link ke file CSS kustom untuk flowchart -->
+    <!-- Semua gaya kustom sekarang akan ada di flowchart_page.css -->
     <link rel="stylesheet" href="/Assets/pages/flowchart_page.css" />
-    <style>
-      /* Gaya untuk tab aktif yang dikontrol oleh JavaScript */
-      .active-tab {
-        color: #4f46e5; /* Tailwind indigo-600 */
-      }
-      /* Gaya tambahan untuk navbar sesuai contoh temanmu */
-      .flowchart-navbar-container {
-        /* Untuk mengelola jarak atau background jika diperlukan */
-        /* background-color: #f9fafb; */ /* Contoh */
-        padding-bottom: 1rem; /* Jarak antara navbar dan konten */
-      }
-      .navbar-item-link {
-        padding: 0.5rem 0.75rem; /* Padding lebih kecil untuk efek seperti contoh */
-        text-decoration: none;
-        color: #4b5563; /* Tailwind gray-700 */
-        font-weight: 500; /* Medium font weight */
-        transition: color 0.3s ease-in-out;
-      }
-      .navbar-item-link:hover:not(.active-tab) {
-        color: #6366f1; /* Tailwind indigo-500, sedikit lebih terang dari active */
-      }
-    </style>
   </head>
   <body>
     <div class="contain">
@@ -40,35 +19,65 @@
       <div class="main-content">
         <!-- Header akan diimpor ke sini dari import-partials.js -->
         <div id="header"></div>
-        <main class="content-area p-4 md:p-8">
+
+        <!-- Navbar untuk Flowchart dengan gaya baru - dipindahkan ke atas -->
+        <div class="flowchart-navbar-container flex" id="flowchart-navbar-wrapper">
+          <nav class="flex" id="flowchart-navbar">
+            <div class="navbar-item">
+              <a href="#" id="tab-input" data-target="flowchart-input-section" data-title="Activation Order" class="navbar-item-link active-tab">Input</a>
+            </div>
+            <div class="navbar-item">
+              <a href="#" id="tab-modif" data-target="flowchart-modif-section" data-title="Modify Order" class="navbar-item-link">Modif</a>
+            </div>
+            <div class="navbar-item">
+              <a href="#" id="tab-do" data-target="flowchart-do-section" data-title="Disconnect Order" class="navbar-item-link">Do</a>
+            </div>
+          </nav>
+        </div>
+
+        <main class="content-area p-4 md:p-8 pt-6">
           <!-- Ini adalah area tempat kamu akan menambahkan konten flowchart kamu -->
           <div class="bg-white p-8 rounded-3xl shadow-lg w-full">
-            <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">Flowchart</h2>
-
-            <!-- Navbar untuk Flowchart dengan gaya baru -->
-            <div class="flowchart-navbar-container flex mb-6">
-              <nav class="flex" id="flowchart-navbar">
-                <div class="navbar-item">
-                  <a href="#" id="tab-input" data-target="flowchart-input-section" class="navbar-item-link active-tab">Input</a>
-                </div>
-                <div class="navbar-item">
-                  <a href="#" id="tab-modif" data-target="flowchart-modif-section" class="navbar-item-link">Modif</a>
-                </div>
-                <div class="navbar-item">
-                  <a href="#" id="tab-do" data-target="flowchart-do-section" class="navbar-item-link">Do</a>
-                </div>
-              </nav>
-            </div>
+            <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">
+              <span id="flowchart-main-title">Activation Order</span>
+            </h2>
 
             <!-- Konten Flowchart Input (langsung di sini) -->
             <div id="flowchart-input-section" class="flowchart-content-section">
-              <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-left">Input</h3>
-              <div class="flowchart-container rounded-lg p-4">
-                <p class="text-gray-600">Konten untuk Flowchart Input akan muncul di sini.</p>
-                <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                  <!-- Placeholder image for Input flowchart -->
-                  <img src="https://placehold.co/720x400/e0e7ff/4338ca?text=Flowchart+Input" alt="Flowchart Input" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Flowchart Diagram</h3>
+              <div class="flowchart-container rounded-lg p-4 bg-gray-50 shadow-inner">
+                <div class="flowchart-image-wrapper mb-8 flex justify-center">
+                  <img src="https://placehold.co/720x400/e0e7ff/4338ca?text=Flowchart+Input+Diagram" alt="Flowchart Input" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
                 </div>
+              </div>
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Step By Step</h3>
+              <div class="flowchart-container rounded-lg p-4 bg-gray-50 shadow-inner">
+                <!-- Langkah Input 1 -->
+                <div class="flowchart-step-item mb-8">
+                  <div class="flowchart-image-wrapper mb-2 flex justify-center">
+                    <img src="https://placehold.co/720x400/e0e7ff/4338ca?text=Langkah+1+Input" alt="Langkah 1 Input" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+                  </div>
+                  <p class="text-gray-700 text-lg text-center mt-2 px-4">**Langkah 1:** Ini adalah penjelasan untuk langkah pertama pada proses **Input**.</p>
+                </div>
+
+                <!-- Langkah Input 2 -->
+                <div class="flowchart-step-item mb-8">
+                  <div class="flowchart-image-wrapper mb-2 flex justify-center">
+                    <img src="https://placehold.co/720x400/e0e7ff/4338ca?text=Langkah+2+Input" alt="Langkah 2 Input" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+                  </div>
+                  <p class="text-gray-700 text-lg text-center mt-2 px-4">**Langkah 2:** Tambahkan detail langkah kedua di sini.</p>
+                </div>
+
+                <!-- Langkah Input 3 -->
+                <div class="flowchart-step-item mb-8">
+                  <div class="flowchart-image-wrapper mb-2 flex justify-center">
+                    <img src="https://placehold.co/720x400/e0e7ff/4338ca?text=Langkah+3+Input" alt="Langkah 3 Input" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+                  </div>
+                  <p class="text-gray-700 text-lg text-center mt-2 px-4">**Langkah 3:** Deskripsikan proses langkah ketiga.</p>
+                </div>
+
+                <!-- Tambahkan lebih banyak langkah di sini jika perlu -->
               </div>
             </div>
 

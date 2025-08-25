@@ -1,6 +1,6 @@
 // import-partials.js
 document.addEventListener("DOMContentLoaded", async () => {
-  // --- Fungsi dari kode yang kamu berikan ---
+  // --- Fungsi dari kode untuk sidebar dan header ---
   fetch("/Layout/Partials/sidebar.html")
     .then((res) => res.text())
     .then((data) => {
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   // Muat konten flowchart untuk bagian Modif dan Do
-  // Path file telah diperbarui agar sesuai dengan /Assets/pages/
+  // Path file telah diperbarui agar sesuai dengan /Pages/flowchart/
   // Konten Input tidak lagi di-load karena sudah di-embed langsung di HTML utama
   await loadAndInsertHtml("flowchart-modif-section", "/Pages/flowchart/flowchart_modif.html");
   await loadAndInsertHtml("flowchart-do-section", "/Pages/flowchart/flowchart_do.html");
@@ -58,13 +58,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const navbar = document.getElementById("flowchart-navbar");
   const tabLinks = navbar ? navbar.querySelectorAll("a") : [];
   const contentSections = document.querySelectorAll(".flowchart-content-section");
+  const mainTitleElement = document.getElementById("flowchart-main-title"); // Dapatkan elemen judul utama
+
   // Fungsi untuk mengaktifkan tab dan menampilkan konten yang sesuai
   function activateTab(targetId) {
     // Hapus kelas 'active-tab' dari semua link
     tabLinks.forEach((link) => {
       link.classList.remove("active-tab");
-      // Pastikan kelas hover juga dihapus saat tab aktif
-      link.classList.remove("hover:text-indigo-600", "hover:border-indigo-600");
     });
 
     // Sembunyikan semua konten section
@@ -76,6 +76,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const activeLink = document.querySelector(`[data-target="${targetId}"]`);
     if (activeLink) {
       activeLink.classList.add("active-tab");
+      // Update judul utama berdasarkan data-title dari link aktif
+      const newTitle = activeLink.getAttribute("data-title");
+      if (mainTitleElement && newTitle) {
+        mainTitleElement.textContent = newTitle;
+      }
     }
 
     // Tampilkan konten yang sesuai
