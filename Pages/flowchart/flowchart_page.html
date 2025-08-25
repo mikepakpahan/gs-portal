@@ -8,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/Assets/css/app.css" />
     <!-- Menambahkan link ke file CSS kustom untuk flowchart -->
+    <!-- Semua gaya kustom sekarang akan ada di flowchart_page.css -->
     <link rel="stylesheet" href="/Assets/pages/flowchart_page.css" />
   </head>
   <body>
@@ -18,85 +19,79 @@
       <div class="main-content">
         <!-- Header akan diimpor ke sini dari import-partials.js -->
         <div id="header"></div>
-        <main class="content-area p-4 md:p-8">
-          <div class="navbar">
-            <nav class="navbar">
-              <div class="navbar-item">
-                <a href="/Pages/employee/employee_page.html" class="active">Employee</a>
-              </div>
-              <div class="navbar-item">
-                <a href="/Pages/employee/internship_page.html">Internship</a>
-              </div>
-            </nav>
-          </div>
+
+        <!-- Navbar untuk Flowchart dengan gaya baru - dipindahkan ke atas -->
+        <div class="flowchart-navbar-container flex" id="flowchart-navbar-wrapper">
+          <nav class="flex" id="flowchart-navbar">
+            <div class="navbar-item">
+              <a href="#" id="tab-input" data-target="flowchart-input-section" data-title="Activation Order" class="navbar-item-link active-tab">Input</a>
+            </div>
+            <div class="navbar-item">
+              <a href="#" id="tab-modif" data-target="flowchart-modif-section" data-title="Modify Order" class="navbar-item-link">Modif</a>
+            </div>
+            <div class="navbar-item">
+              <a href="#" id="tab-do" data-target="flowchart-do-section" data-title="Disconnect Order" class="navbar-item-link">Do</a>
+            </div>
+          </nav>
+        </div>
+
+        <main class="content-area p-4 md:p-8 pt-6">
           <!-- Ini adalah area tempat kamu akan menambahkan konten flowchart kamu -->
           <div class="bg-white p-8 rounded-3xl shadow-lg w-full">
-            <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">Flowchart</h2>
-            <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-left">Modif</h3>
-            <div class="flowchart-container rounded-lg p-4">
-              <!-- Images for the flowchart content -->
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/flowchart-modif.png" alt="Flowchart Modifikasi" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+            <h2 class="text-4xl font-bold text-gray-900 mb-6 text-left">
+              <span id="flowchart-main-title">Activation Order</span>
+            </h2>
+
+            <!-- Konten Flowchart Input (langsung di sini) -->
+            <div id="flowchart-input-section" class="flowchart-content-section">
+              <div class="mb-8">
+                <h4 class="text-xl font-semibold text-gray-700 mb-4 text-center">Flowchart Diagram</h4>
+                <div class="flowchart-container rounded-lg p-4 bg-gray-50 shadow-inner">
+                  <div class="flowchart-image-wrapper mb-8 flex justify-center">
+                    <img src="https://placehold.co/720x400/e0e7ff/4338ca?text=Flowchart+Input+Diagram" alt="Flowchart Input" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+                  </div>
+                </div>
               </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step1-m.png" alt="Langkah 1 Modif" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step1.1-m.png" alt="Langkah 1.1 Modif" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step2-m.png" alt="Langkah 2 Modif" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step3-m.png" alt="Langkah 3 Modif" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step3.1-m.png" alt="Langkah 3.1 Modif" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step4-m.png" alt="Langkah 4 Modif" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-left">DO</h3>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/flowchart-DO.png" alt="Flowchart DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step1-DO.png" alt="Langkah 1 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step2-DO.png" alt="Langkah 2 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step2.1-DO.png" alt="Langkah 2.1 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step3-DO.png" alt="Langkah 3 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step3.1-DO.png" alt="Langkah 3.1 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step4-DO.png" alt="Langkah 4 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step5-DO.png" alt="Langkah 5 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step5.1-DO.png" alt="Langkah 5.1 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step5.2-DO.png" alt="Langkah 5.2 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step6-DO.png" alt="Langkah 6 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper mb-4 flex justify-center">
-                <img src="/Assets/images/flowchart/step7-DO.png" alt="Langkah 7 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
-              </div>
-              <div class="flowchart-image-wrapper flex justify-center">
-                <img src="/Assets/images/flowchart/step8-DO.png" alt="Langkah 8 DO" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+
+              <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Step By Step</h3>
+              <div class="flowchart-container rounded-lg p-4 bg-gray-50 shadow-inner">
+                <!-- Langkah Input 1 -->
+                <div class="flowchart-step-item mb-8">
+                  <p class="step-label-text">Langkah 1:</p>
+                  <div class="flowchart-image-wrapper mb-2 flex justify-center">
+                    <img src="https://placehold.co/720x400/e0e7ff/4338ca?text=Langkah+1+Input" alt="Langkah 1 Input" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+                  </div>
+                  <p class="text-gray-700 text-lg text-center mt-2 px-4">Ini adalah penjelasan untuk langkah pertama pada proses **Input**.</p>
+                </div>
+
+                <!-- Langkah Input 2 -->
+                <div class="flowchart-step-item mb-8">
+                  <p class="step-label-text">Langkah 2:</p>
+                  <div class="flowchart-image-wrapper mb-2 flex justify-center">
+                    <img src="https://placehold.co/720x400/e0e7ff/4338ca?text=Langkah+2+Input" alt="Langkah 2 Input" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+                  </div>
+                  <p class="text-gray-700 text-lg text-center mt-2 px-4">Tambahkan detail langkah kedua di sini.</p>
+                </div>
+
+                <!-- Langkah Input 3 -->
+                <div class="flowchart-step-item mb-8">
+                  <p class="step-label-text">Langkah 3:</p>
+
+                  <div class="flowchart-image-wrapper mb-2 flex justify-center">
+                    <img src="https://placehold.co/720x400/e0e7ff/4338ca?text=Langkah+3+Input" alt="Langkah 3 Input" class="max-w-full h-auto rounded-md shadow-sm" style="width: 720px; height: auto" />
+                  </div>
+                  <p class="text-gray-700 text-lg text-center mt-2 px-4">Deskripsikan proses langkah ketiga.</p>
+                </div>
+
+                <!-- Tambahkan lebih banyak langkah di sini jika perlu -->
               </div>
             </div>
+
+            <!-- Konten Flowchart Modif akan dimuat di sini (sembunyi secara default) -->
+            <div id="flowchart-modif-section" class="flowchart-content-section" style="display: none"></div>
+
+            <!-- Konten Flowchart DO akan dimuat di sini (sembunyi secara default) -->
+            <div id="flowchart-do-section" class="flowchart-content-section" style="display: none"></div>
           </div>
         </main>
       </div>
@@ -104,7 +99,54 @@
 
     <div class="overlay" id="overlay"></div>
     <script src="/Assets/js/app.js"></script>
+    <script>
+      // Override fungsi activateTab biar scroll ke atas container
+      document.addEventListener("DOMContentLoaded", () => {
+        function activateTab(targetId) {
+          const navbar = document.getElementById("flowchart-navbar");
+          const tabLinks = navbar ? navbar.querySelectorAll("a") : [];
+          const contentSections = document.querySelectorAll(".flowchart-content-section");
+          const mainTitleElement = document.getElementById("flowchart-main-title");
+
+          // Hapus kelas aktif
+          tabLinks.forEach((link) => link.classList.remove("active-tab"));
+          contentSections.forEach((section) => (section.style.display = "none"));
+
+          // Aktifkan link
+          const activeLink = document.querySelector(`[data-target="${targetId}"]`);
+          if (activeLink) {
+            activeLink.classList.add("active-tab");
+            const newTitle = activeLink.getAttribute("data-title");
+            if (mainTitleElement && newTitle) {
+              mainTitleElement.textContent = newTitle;
+            }
+          }
+
+          // Tampilkan konten
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.style.display = "block";
+
+            // Scroll otomatis
+            setTimeout(() => {
+              const scrollContainer = document.querySelector(".main-content") || window;
+              scrollContainer.scrollTo({ top: 0, behavior: "smooth" });
+            }, 50);
+          }
+        }
+
+        // Pasang event listener ke tab
+        const navbar = document.getElementById("flowchart-navbar");
+        const tabLinks = navbar ? navbar.querySelectorAll("a") : [];
+        tabLinks.forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            const targetId = link.getAttribute("data-target");
+            if (targetId) activateTab(targetId);
+          });
+        });
+      });
+    </script>
     <script src="/Assets/js/import-partials.js"></script>
-    <!-- Skrip untuk mengimpor sidebar dan header -->
   </body>
 </html>

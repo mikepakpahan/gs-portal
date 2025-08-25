@@ -4,6 +4,67 @@ img {
   height: auto;
 }
 
+/* Gaya untuk tab aktif yang dikontrol oleh JavaScript */
+/* Dibuat lebih spesifik untuk mengatasi konflik */
+.navbar-item-link.active-tab {
+  /* Menggabungkan dengan .navbar-item-link */
+  color: #dc2626 !important; /* Warna merah untuk tab aktif, sangat penting */
+  text-decoration: none !important; /* Pastikan tidak ada text-decoration yang tumpang tindih */
+}
+
+/* Gaya tambahan untuk navbar sesuai contoh temanmu */
+.flowchart-navbar-container {
+  background-color: #ffffff; /* Tambahkan background putih agar navbar terlihat terpisah */
+  padding: 1rem 2rem 0.5rem 2rem; /* Atur padding untuk navbar */
+}
+/* Tambahkan gap ke nav element */
+#flowchart-navbar {
+  /* Menargetkan nav element dengan ID flowchart-navbar */
+  gap: 0.5rem; /* Memberikan jarak 0.5rem antar item navbar */
+}
+.navbar-item-link {
+  position: relative; /* Penting untuk posisi ::after */
+  padding: 0.5rem 0.75rem 0.25rem 0.75rem; /* Padding disesuaikan untuk ruang garis bawah */
+  text-decoration: none; /* Pastikan text-decoration selalu none untuk link non-aktif */
+  color: #646464; /* Warna abu-abu untuk teks default */
+  font-weight: 500; /* Medium font weight */
+  transition: color 0.3s ease-in-out;
+  display: block; /* Agar padding dan border bisa diterapkan dengan baik */
+  border-bottom: none; /* Pastikan tidak ada border-bottom default */
+}
+
+/* Pseudo-element untuk garis bawah */
+.navbar-item-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0; /* Posisikan di dasar link */
+  left: 0;
+  width: 0; /* Lebar awal 0 */
+  height: 2px; /* Ketebalan garis */
+  background-color: #dc2626; /* Warna garis */
+  transition: width 0.3s ease; /* Efek transisi saat lebar berubah */
+}
+
+/* Aturan untuk efek hover */
+.navbar-item-link:hover {
+  color: #dc2626; /* Warna merah saat hover */
+}
+
+.navbar-item-link:hover::after {
+  width: 100%; /* Garis bawah muncul 100% saat hover */
+}
+
+/* Aturan untuk halaman yang aktif */
+.navbar-item-link.active-tab::after {
+  width: 100% !important; /* Garis bawah muncul 100% saat aktif, sangat penting */
+}
+
+/* Sesuaikan jarak antar item navbar */
+/* Hapus margin-right dari sini karena sudah diganti dengan gap pada #flowchart-navbar */
+.flowchart-navbar-container .navbar-item:not(:last-child) {
+  /* margin-right: 1.5rem; */
+}
+
 /* Gaya kustom untuk container flowchart */
 .flowchart-container {
   min-height: 400px; /* Tinggi minimum untuk melihat area konten */
@@ -11,7 +72,7 @@ img {
   border: 1px dashed #d1d5db; /* Border putus-putus untuk menunjukkan area konten */
   display: flex;
   flex-direction: column; /* Ubah flex-direction ke column agar item di dalamnya tumpuk vertikal */
-  align-items: flex-start; /* Mengatur item di dalam container agar rata kiri (untuk judul) */
+  align-items: center; /* Mengatur item di dalam container agar rata tengah */
   justify-content: flex-start; /* Atur konten agar rata atas */
   font-size: 1.25rem;
   color: #757575;
@@ -19,6 +80,7 @@ img {
   padding-bottom: 1rem; /* Add some bottom padding */
 }
 
+/* Gaya untuk wrapper gambar di dalam flowchart */
 .flowchart-image-wrapper {
   display: flex; /* Mengubah kembali dari block menjadi flex */
   justify-content: center; /* Mengatur konten (gambar) di dalam wrapper agar rata tengah */
@@ -28,14 +90,32 @@ img {
   box-sizing: border-box; /* Memastikan padding tidak menambah lebar keseluruhan */
   margin-left: 0; /* Pastikan tidak ada margin auto yang mengganggu */
   margin-right: 0; /* Pastikan tidak ada margin auto yang mengganggu */
-
-  /* PERBAIKAN: Mengoverride alignment dari parent (flowchart-container) */
   align-self: center; /* Ini akan meratakan wrapper gambar itu sendiri ke tengah */
 }
 
-/* Menghapus media query yang tidak lagi diperlukan */
-/* @media (max-width: 767px) {
-  .flowchart-image-wrapper {
-    justify-content: center;
-  }
-} */
+/* Gaya untuk item langkah individu (gambar + teks) */
+.flowchart-step-item {
+  width: 100%; /* Pastikan mengambil lebar penuh dari .flowchart-container */
+  display: flex;
+  flex-direction: column; /* Mengatur anak-anaknya secara vertikal */
+  align-items: flex-start; /* Membuat anak-anaknya (termasuk .step-label-text) rata kiri secara default */
+  margin-bottom: 2rem; /* Konsisten dengan mb-8 di HTML */
+}
+
+/* Gaya untuk teks label langkah (contoh: "Langkah 1:") */
+.step-label-text {
+  text-align: left;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #374151;
+  padding-left: 0; /* Hapus padding-left dari sini, agar mengikuti padding parent */
+  margin-bottom: 0.5rem;
+  width: 100%; /* Memastikan label mengambil lebar penuh dalam step-item */
+}
+
+/* Mengoverride alignment untuk gambar dan penjelasan agar tetap rata tengah */
+.flowchart-step-item .flowchart-image-wrapper,
+.flowchart-step-item p:not(.step-label-text) {
+  align-self: center; /* Pusatkan gambar dan penjelasan di dalam flowchart-step-item */
+  text-align: center; /* Pastikan teks penjelasan rata tengah */
+}
