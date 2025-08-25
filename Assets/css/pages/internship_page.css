@@ -21,7 +21,7 @@
   margin-left: 30px;
   flex-grow: 1; /* Biarkan employee-list mengisi ruang yang tersisa */
 }
-.employee-list-container {
+.internship-list-container {
   width: 100%;
   max-width: 900px;
   background-color: #ffffff00;
@@ -174,7 +174,7 @@
   color: #646464;
 }
 
-.employee-card {
+.internship-card {
   display: flex;
   align-items: center;
   background-color: #fff;
@@ -182,36 +182,37 @@
   border-radius: 14px;
   box-shadow: 4px 5px 13px rgba(0, 0, 0, 0.08);
   padding: 15px;
+  gap: 30px;
   margin-bottom: 15px;
   transition: all 0.3s ease;
 }
 
-.employee-card:hover {
+.internship-card:hover {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
-.employee-card img {
+.internship-card img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 15px;
   background: linear-gradient(to bottom, #c09898, #5a4747);
 }
-.employee-info {
+.internship-info {
   display: flex;
   align-items: center;
   width: 100%;
+  gap: 20px;
 }
 
 .employee-info > div {
   flex: 1;
 }
 
-.employee-info .name {
+.internship-info .nama {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 800;
   color: #333;
 }
 
@@ -221,6 +222,68 @@
   margin-left: 15px;
 }
 
+.bio {
+  max-width: 230px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+.univ {
+  max-width: 280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 5px;
+  border-left: #333 solid 1px;
+  border-right: #333 solid 1px;
+}
+
+.masa {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 5px;
+}
+
+.periode {
+  font-size: 12px;
+  text-align: left;
+  color: #333;
+  font-weight: 400;
+}
+.judul {
+  text-align: left;
+  color: #333;
+  font-weight: 800;
+}
+
+.kampus {
+  text-align: left;
+  color: #333;
+  font-weight: 800;
+}
+.jurusan {
+  font-size: 12px;
+  text-align: left;
+  color: #333;
+  font-weight: 400;
+}
+.periode {
+  text-align: left;
+  color: #333;
+  font-weight: 400;
+}
+.nim {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+  text-align: left;
+}
 .nik {
   font-weight: 600;
   color: #333;
