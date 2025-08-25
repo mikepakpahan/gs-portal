@@ -1,0 +1,376 @@
+.contain {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.main-content {
+  flex-grow: 1;
+  transition: margin-left 0.3s ease;
+  display: flex; /* Gunakan flexbox pada main-content */
+  flex-direction: column; /* Atur orientasi vertikal */
+}
+
+.employee-list {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 12px;
+  padding: 20px;
+  margin-left: 30px;
+  flex-grow: 1; /* Biarkan employee-list mengisi ruang yang tersisa */
+}
+.internship-list-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff00;
+  border-radius: 12px;
+  padding: 20px;
+  max-height: calc(100vh - 200px); /* Ganti 200px sesuai kebutuhan Anda */
+  overflow-y: auto; /* Aktifkan scrolling vertikal */
+}
+
+.employee-manager-card {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 450px;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  box-shadow: 4px 5px 13px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 15px;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.manager {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Tambahkan ini agar profile bisa jadi relative */
+  background-size: cover;
+}
+.manager-profile {
+  position: absolute;
+  top: 75px; /* Posisi vertikal di dalam card */
+  left: 18%;
+  transform: translateX(-50%); /* Memastikan posisi benar-benar di tengah */
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: width 0.5s ease-in-out, height 0.5s ease-in-out, top 0.5s ease-in-out, left 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.manager-profile img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(to bottom, #c09898, #5a4747);
+}
+.contain.sidebar-open .manager-profile {
+  top: 75px;
+  left: 25%;
+}
+
+.contain.sidebar-open .manager-profile img {
+  width: 130px !important;
+  height: 130px !important;
+}
+.manager-bg {
+  background-image: url("/Assets/images/employee/Manager-bg.png");
+  background-position: center;
+  background-size: cover;
+  height: 150px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.manager-bg img {
+  width: auto;
+  height: 200px;
+}
+.manager-info {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  margin-top: 50px;
+}
+
+.manager-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: start;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.manager-details h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: black;
+}
+
+.manager-details p {
+  font-size: 16px;
+  color: black;
+}
+
+.manager-role {
+  width: fit-content;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 900;
+  color: black;
+  padding: 20px;
+  background-color: #e2e2e2;
+  border-radius: 14px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.employee-list-container {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff00;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.content-area {
+  padding: 20px;
+  background-color: white;
+}
+
+.header-employee {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 30px 0 30px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  justify-content: space-between;
+}
+
+.header-title h2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #646464;
+  font-size: 35px;
+}
+
+.header-title p {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 20px;
+  gap: 10px;
+  color: #646464;
+}
+
+.internship-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 14px;
+  box-shadow: 4px 5px 13px rgba(0, 0, 0, 0.08);
+  padding: 15px;
+  gap: 30px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.internship-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.internship-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: linear-gradient(to bottom, #c09898, #5a4747);
+}
+.internship-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.employee-info > div {
+  flex: 1;
+}
+
+.internship-info .nama {
+  font-size: 16px;
+  font-weight: 800;
+  color: #333;
+}
+
+.employee-info .role {
+  font-size: 14px;
+  color: #333;
+  margin-left: 15px;
+}
+
+.bio {
+  max-width: 230px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+.univ {
+  max-width: 280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 5px;
+  border-left: #333 solid 1px;
+  border-right: #333 solid 1px;
+}
+
+.masa {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 5px;
+}
+
+.periode {
+  font-size: 12px;
+  text-align: left;
+  color: #333;
+  font-weight: 400;
+}
+.judul {
+  text-align: left;
+  color: #333;
+  font-weight: 800;
+}
+
+.kampus {
+  text-align: left;
+  color: #333;
+  font-weight: 800;
+}
+.jurusan {
+  font-size: 12px;
+  text-align: left;
+  color: #333;
+  font-weight: 400;
+}
+.periode {
+  text-align: left;
+  color: #333;
+  font-weight: 400;
+}
+.nim {
+  font-size: 12px;
+  font-weight: 400;
+  color: #333;
+  text-align: left;
+}
+.nik {
+  font-weight: 600;
+  color: #333;
+  border-left: #333 solid 1px;
+  border-right: #333 solid 1px;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.navbar-item {
+  margin-right: 25px;
+}
+
+.navbar-item a {
+  position: relative;
+  text-decoration: none;
+  color: #646464;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-item a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #dc2626;
+  transition: width 0.3s ease;
+}
+
+/* Aturan untuk efek hover */
+.navbar-item a:hover {
+  color: #dc2626;
+}
+
+.navbar-item a:hover::after {
+  width: 100%;
+}
+
+/* Aturan untuk halaman yang aktif */
+.navbar-item a.active {
+  color: #dc2626;
+}
+
+.navbar-item a.active::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .employee-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .manager-detail {
+    width: 90%;
+    margin: 10px auto;
+  }
+  .employee-manager-card {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .manager-bg img {
+    height: 150px;
+  }
+
+  .manager-profile {
+    width: 140px;
+    height: 140px;
+    top: 120px;
+  }
+
+  .manager-profile img {
+    width: 140px;
+    height: 140px;
+    border-radius: 500px;
+    z-index: 100;
+  }
+}

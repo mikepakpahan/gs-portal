@@ -243,7 +243,7 @@
 .navbar-item a {
   position: relative;
   text-decoration: none;
-  color: #c09898;
+  color: #646464;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -257,13 +257,13 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #007bff;
+  background-color: #dc2626;
   transition: width 0.3s ease;
 }
 
 /* Aturan untuk efek hover */
 .navbar-item a:hover {
-  color: #007bff;
+  color: #dc2626;
 }
 
 .navbar-item a:hover::after {
@@ -272,7 +272,7 @@
 
 /* Aturan untuk halaman yang aktif */
 .navbar-item a.active {
-  color: #007bff;
+  color: #dc2626;
 }
 
 .navbar-item a.active::after {

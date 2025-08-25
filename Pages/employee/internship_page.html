@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Pekerja | Internship</title>
+    <link rel="stylesheet" href="/Assets/css/app.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="contain">
+      <div id="sidebar"></div>
+      <div class="main-content">
+        <div id="header"></div>
+        <main>
+          <div class="header-employee">
+            <div class="header-title">
+              <h2>Internship</h2>
+              <p>6 People on The list</p>
+            </div>
+            <div class="navbar">
+              <nav class="navbar">
+                <div class="navbar-item">
+                  <a href="/Pages/employee/employee_page.html">Employee</a>
+                </div>
+                <div class="navbar-item">
+                  <a href="/Pages/employee/internship_page.html" class="active">Internship</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+          <div class="employee-list">
+            <div class="employee-manager-card">
+              <div class="manager">
+                <div class="manager-profile">
+                  <img src="/Assets/images/employee/Veberia.png" alt="Veberia" />
+                </div>
+                <div class="manager-bg"></div>
+                <div class="manager-info">
+                  <div class="manager-details">
+                    <h2>Veberia Panjaitan</h2>
+                    <p>810034</p>
+                  </div>
+                  <div class="manager-role">Mentor</div>
+                </div>
+              </div>
+            </div>
+            <div class="internship-list-container">
+              <div class="internship-card">
+                <img src="/Assets/images/internship/ripki.png" alt="ripki" />
+                <div class="internship-info">
+                  <div class="bio">
+                  <div class="nama">Muhammad Rifky Kembaren</div>
+                  <div class="nim">231712082</div>                    
+                  </div>
+                  <div class="univ">
+                    <div class="kampus">Universitas Sumatera Utara</div>
+                    <div class="jurusan">Teknik Informatika</div>
+                  </div>
+                  <div class="masa">
+                    <div class="judul">Periode</div>
+                    <div class="periode">1 Agustus s/d 31 Agustus 2025</div>
+                  </div>
+                </div>
+              </div>
+              <div class="internship-card">
+                <img src="/Assets/images/internship/parhan.png" alt="parhan" />
+                <div class="internship-info">
+                  <div class="bio">
+                  <div class="nama">Muhammad Farhan</div>
+                  <div class="nim">231712087</div>                    
+                  </div>
+                  <div class="univ">
+                    <div class="kampus">Universitas Sumatera Utara</div>
+                    <div class="jurusan">Teknik Informatika</div>
+                  </div>
+                  <div class="masa">
+                    <div class="judul">Periode</div>
+                    <div class="periode">1 Agustus s/d 31 Agustus 2025</div>
+                  </div>
+                </div>
+              </div>
+              <div class="internship-card">
+                <img src="/Assets/images/internship/mike.png" alt="mike" />
+                <div class="internship-info">
+                  <div class="bio">
+                  <div class="nama">Michael Babtista Pakpahan</div>
+                  <div class="nim">231712092</div>                    
+                  </div>
+                  <div class="univ">
+                    <div class="kampus">Universitas Sumatera Utara</div>
+                    <div class="jurusan">Teknik Informatika</div>
+                  </div>
+                  <div class="masa">
+                    <div class="judul">Periode</div>
+                    <div class="periode">1 Agustus s/d 31 Agustus 2025</div>
+                  </div>
+                </div>
+              </div>
+              <div class="internship-card">
+                <img src="/Assets/images/internship/jodii.png" alt="cudai" />
+                <div class="internship-info">
+                  <div class="bio">
+                  <div class="nama">Jodi Handika Fransisko Sim</div>
+                  <div class="nim">231712099</div>                    
+                  </div>
+                  <div class="univ">
+                    <div class="kampus">Universitas Sumatera Utara</div>
+                    <div class="jurusan">Teknik Informatika</div>
+                  </div>
+                  <div class="masa">
+                    <div class="judul">Periode</div>
+                    <div class="periode">1 Agustus s/d 31 Agustus 2025</div>
+                  </div>
+                </div>
+              </div>
+              <div class="internship-card">
+                <img src="/Assets/images/internship/isan.png" alt="isan" />
+                <div class="internship-info">
+                  <div class="bio">
+                  <div class="nama">Ihsan Fahrezi Lubis</div>
+                  <div class="nim">231712103</div>                    
+                  </div>
+                  <div class="univ">
+                    <div class="kampus">Universitas Sumatera Utara</div>
+                    <div class="jurusan">Teknik Informatika</div>
+                  </div>
+                  <div class="masa">
+                    <div class="judul">Periode</div>
+                    <div class="periode">1 Agustus s/d 31 Agustus 2025</div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <script src="/Assets/js/app.js"></script>
+    <script src="/Assets/js/import-partials.js"></script>
+    <script>
+      // Asumsikan sidebar adalah elemen yang akan memicu event
+      const sidebar = document.getElementById("sidebar");
+      const container = document.querySelector(".contain");
+
+      // Saat kursor masuk ke area sidebar, tambahkan class
+      sidebar.addEventListener("mouseenter", () => {
+        container.classList.add("sidebar-open");
+      });
+
+      // Saat kursor keluar dari area sidebar, hapus class
+      sidebar.addEventListener("mouseleave", () => {
+        container.classList.remove("sidebar-open");
+      });
+    </script>
+  </body>
+</html>
