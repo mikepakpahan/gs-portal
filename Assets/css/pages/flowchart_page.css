@@ -106,7 +106,7 @@ img {
 .step-label-text {
   text-align: left;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #374151;
   padding-left: 0; /* Hapus padding-left dari sini, agar mengikuti padding parent */
   margin-bottom: 0.5rem;
