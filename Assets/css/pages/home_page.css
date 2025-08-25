@@ -68,28 +68,28 @@
 }
 
 .card-3 {
-  background-image: url("/Assets/images/employee/Ivan.png");
+  background-image: url("/Assets/images/employee/Marlincha.png");
 }
 .card-4 {
-  background-image: url("/Assets/images/employee/Ery.png");
+  background-image: url("/Assets/images/employee/Ivan.png");
 }
 .card-5 {
-  background-image: url("/Assets/images/employee/Frengky.png");
+  background-image: url("/Assets/images/employee/Ery.png");
 }
 .card-6 {
-  background-image: url("/Assets/images/employee/Dicky.png");
+  background-image: url("/Assets/images/employee/Frengky.png");
 }
 .card-7 {
-  background-image: url("/Assets/images/employee/Marlincha.png");
+  background-image: url("/Assets/images/employee/Dicky.png");
 }
 .card-8 {
   background-image: url("/Assets/images/employee/Veberia.png");
 }
 .card-9 {
-  background-image: url("/Assets/images/employee/Citra.png");
+  background-image: url("/Assets/images/employee/Vebrina.png");
 }
 .card-10 {
-  background-image: url("/Assets/images/employee/Citra.png");
+  background-image: url("/Assets/images/employee/Lailany.png");
 }
 
 /* dan seterusnya... */
@@ -149,11 +149,13 @@
 .slogan h1 {
   font-size: 1.875rem;
   font-weight: bold;
+  color: black;
 }
 
 .slogan p {
   margin-top: 0.5rem;
   font-size: 1.125rem;
+  color: black;
 }
 
 /* === Glassmorphism Container === */
