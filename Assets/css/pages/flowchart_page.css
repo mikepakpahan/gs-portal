@@ -14,7 +14,6 @@ img {
 
 /* Gaya tambahan untuk navbar sesuai contoh temanmu */
 .flowchart-navbar-container {
-  background-color: #ffffff; /* Tambahkan background putih agar navbar terlihat terpisah */
   padding: 1rem 2rem 0.5rem 2rem; /* Atur padding untuk navbar */
 }
 /* Tambahkan gap ke nav element */

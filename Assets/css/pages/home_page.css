@@ -142,20 +142,18 @@
 /* === Slogan === */
 .slogan {
   text-align: center;
-  color: white;
+  color: black;
   margin-top: 3rem;
 }
 
 .slogan h1 {
-  font-size: 1.875rem;
+  font-size: 3rem;
   font-weight: bold;
-  color: black;
 }
 
 .slogan p {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   font-size: 1.125rem;
-  color: black;
 }
 
 /* === Glassmorphism Container === */

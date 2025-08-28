@@ -143,11 +143,6 @@
   padding: 20px;
 }
 
-.content-area {
-  padding: 20px;
-  background-color: white;
-}
-
 .header-employee {
   display: flex;
   flex-direction: row;
